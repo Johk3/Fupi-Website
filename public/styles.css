@@ -1,0 +1,120 @@
+body {
+font-family: Verdana, Arial, sans-serif;
+font-size: 100%;
+}
+
+h3 { font-size: 4vw; }
+h4 { font-size: 3vw; }
+p { font-size: 2vw; }
+
+/*@media only screen and (max-width: 600px) {
+.navbar {font-size: 4em; }
+}*/
+
+.navbar {
+width: 100%;
+border-spacing: 0.5em;
+background-color: rgb(255, 255, 255);
+border-radius: 1vw;
+font-size: 2vw;
+}
+
+.navbar a {
+color: rgb(0, 0, 0);
+border-radius: 1vw;
+text-decoration:none;
+display:block;
+}
+
+.navbar a:hover {
+/*background-color: rgb(153, 255, 255);*/
+text-shadow: 4px 4px rgb(230, 230, 230);
+color: rgb(0, 0, 0); }
+
+td.current-page {
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border-radius: 1vw; }
+
+.socmedia {
+width: 100%;
+border-radius: 1vw; }
+
+.socmedia img {
+width: 3vw;
+height: 3vw;
+border: 0;
+border-radius: 1vw; }
+
+.socmedia img:hover {
+border: 0;
+border-radius: 2vw; }
+
+.header-images {
+width: 100%;
+border-radius: 1vw; }
+
+iframe {
+/*width: 100%;
+height: 15vw;    /* change */
+border-radius: 1vw; }
+
+.ir-prod-musician {
+padding-top; 20vw;
+text-align: center;
+font-size: 3vw;
+}
+
+.contact {
+font-size: 2vw;
+}
+
+input[type=text], select {
+	font-size: 2vw;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+	font-size: 2vw;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.textarea {
+    width: 100%;
+    height: 20vw;
+	font-size: 2vw;
+}
+
+input[type=submit]:hover {
+	font-size: 2vw;
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.or-email {
+text-align: center;
+}
+
+
+
+
+
+
