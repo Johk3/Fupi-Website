@@ -11,7 +11,6 @@
 <header>
 <table class="navbar">
 <tr>
-<td align="center"><a href="mixing.html">Mixing</td>
 <td align="center"><a href="music.html">Music</td>
 <td align="center"><a href="myself.html">Myself</td>
 <td align="center"><a href="contact.html">Contact</a></td>
@@ -43,17 +42,13 @@
 
 <h4>Engineer Portfolio</h4>
 
-<p><iframe width="100%" height="200" 
-src="https://www.youtube.com/embed/KoNK1opvkCU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<p><div id="player1"></div></p>
 
-<p><iframe width="100%" height="200" src="https://www.youtube.com/embed/YQiCtciE13g?rel=0" 
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<p><div id="player2"></div></p>
 
-<p><iframe width="100%" height="200" src="https://www.youtube.com/embed/UeiKY2JuIcg?rel=0" 
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<p><div id="player3"></div></p>
 
-<p><iframe width="100%" height="200" src="https://www.youtube.com/embed/uvWhwS7HB0E?rel=0" 
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<p><div id="player4"></div></p>
 
 <p><iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" 
 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256522632&color=%23ff4f00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe></p>
@@ -64,5 +59,69 @@ src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/25
 src="https://bandcamp.com/EmbeddedPlayer/album=1293351796/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" 
 seamless><a href="http://zaska.bandcamp.com/album/in-your-own-sweet-time">In Your Own Sweet Time by Zaska</a></iframe></p>
 
+<script>
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player1 = new YT.Player('player1', {
+            height: '200',
+            width: '100%',
+            videoId: 'KoNK1opvkCU',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player2 = new YT.Player('player2', {
+            height: '200',
+            width: '100%',
+            videoId: 'YQiCtciE13g',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player3 = new YT.Player('player3', {
+            height: '200',
+            width: '100%',
+            videoId: 'UeiKY2JuIcg',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player4 = new YT.Player('player4', {
+            height: '200',
+            width: '100%',
+            videoId: 'uvWhwS7HB0E',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            stopVideo(event.target.a.id);
+        }
+    }
+    
+    function stopVideo(player_id) {
+    	// This is pretty messy way to stop videos i am sure you can find better ways
+        if (player_id == "player1") {
+            player2.stopVideo();
+        } else if (player_id == "player2") {
+            player1.stopVideo();
+        }else if (player_id == "player3"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        }else if  (player_id == "player4"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        }
+    }
+</script>
 </body>
 </html>

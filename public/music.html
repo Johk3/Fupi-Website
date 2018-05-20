@@ -8,14 +8,189 @@
 <link rel="stylesheet" href="styles.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<script type="text/javascript" src="js/music.js"></script>
+<script>
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player1 = new YT.Player('player1', {
+            height: '315',
+            width: '560',
+            videoId: 'CNCgYP7TA0Y',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player2 = new YT.Player('player2', {
+            height: '315',
+            width: '560',
+            videoId: 'FxUztW98pDE',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player3 = new YT.Player('player3', {
+            height: '315',
+            width: '560',
+            videoId: 'kS6Z9DHmoKM',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player4 = new YT.Player('player4', {
+            height: '315',
+            width: '560',
+            videoId: 'PQaGPGt_qT0',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player5 = new YT.Player('player5', {
+            height: '315',
+            width: '560',
+            videoId: 'DoWfAvfzJUQ',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player6 = new YT.Player('player6', {
+            height: '315',
+            width: '560',
+            videoId: 'vPUUSM-HRV0',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player7 = new YT.Player('player7', {
+            height: '315',
+            width: '560',
+            videoId: 'NxjmRRM3a9o',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player8 = new YT.Player('player8', {
+            height: '315',
+            width: '560',
+            videoId: '3ae1yHttgG8',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player9 = new YT.Player('player9', {
+            height: '315',
+            width: '560',
+            videoId: 'ybUsr0oMi8M',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player10 = new YT.Player('player10', {
+            height: '315',
+            width: '560',
+            videoId: 'YQiCtciE13g',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        player11 = new YT.Player('player11', {
+            height: '315',
+            width: '560',
+            videoId: 'ctngqw3cuOk',
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            stopVideo(event.target.a.id);
+        }
+    }
+    
+    function stopVideo(player_id) {
+    	// This is pretty messy way to stop videos i am sure you can find better ways
+        if (player_id == "player1") {
+            player2.stopVideo();
+        } else if (player_id == "player2") {
+            player1.stopVideo();
+        }else if (player_id == "player3"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        }else if  (player_id == "player4"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        }else if (player_id == "player5"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        }else if (player_id == "player6"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        }else if (player_id == "player7"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        	player6.stopVideo();
+        }else if (player_id == "player8"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        	player6.stopVideo();
+        	player7.stopVideo();
+        }else if (player_id == "player9"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        	player6.stopVideo();
+        	player7.stopVideo();
+        	player8.stopVideo();
+        }else if (player_id == "player10"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        	player6.stopVideo();
+        	player7.stopVideo();
+        	player8.stopVideo();
+        	player9.stopVideo();
+        }
+        else if (player_id == "player11"){
+        	player1.stopVideo();
+        	player2.stopVideo();
+        	player3.stopVideo();
+        	player4.stopVideo();
+        	player5.stopVideo();
+        	player6.stopVideo();
+        	player7.stopVideo();
+        	player8.stopVideo();
+        	player9.stopVideo();
+        	player10.stopVideo();
+        }
+    }
+</script>
 <body>
 
 <header>
 <table class="navbar">
 <tr>
 <td align="center"><a href="mixing.html">Mixing</td>
-<td align="center"><a href="music.html">Music</td>
 <td align="center"><a href="myself.html">Myself</td>
 <td align="center"><a href="contact.html">Contact</a></td>
 </tr>
@@ -40,51 +215,47 @@
 </table>
 </header>
 <!-- ---------------------------------------- -->
-
 <p>I am an electronic musician. The technological production of music is my passion.</p>
-
-<iframe src="https://www.youtube.com/embed/CNCgYP7TA0Y?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:5jSBQzlZVzrVMJBuZOnr1k&size=basic&theme=light&show-count=0" width="200" height="28" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe><br>
+<div id="player1"></div>
 
 
 
 
 <iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/26408436&color=%23ff4f00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
-<iframe src="https://www.youtube.com/embed/FxUztW98pDE?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player2"></div>
 
 <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2463023656/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://mickmon.bandcamp.com/album/novelty">novelty by mickmon</a></iframe>
 <p>Kalimba Dreams; a cute and dreamy beat</p>
-<iframe allowscriptaccess="always" width="560" height="315" src="https://www.youtube.com/embed/kS6Z9DHmoKM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player3"></div>
 
 <p>QuNeo Meets VIZZable; A colourful real-time performance in Ableton Live</p>
-<iframe  width="560" height="315" src="https://www.youtube.com/embed/PQaGPGt_qT0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player4"></div>
 
 <p>Brain Damage; A wavy contemporary beat inspired by the Kalimba and the kitchen pots</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DoWfAvfzJUQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player5"></div>
 
 <p>Butter; Sampling the classics and filming the skies</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vPUUSM-HRV0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player6"></div>
 
 <p>Hang Drum Flip; A remix of a beautiful moment between busker and Jerusalem locals</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NxjmRRM3a9o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player7"></div>
 
 <p>Superstar Glitch; Youtube glitches out in beautiful fashion</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3ae1yHttgG8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player8"></div>
 
 <p>Sparsity; Spontaneous beat performed live on the QuNeo</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ybUsr0oMi8M?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player9"></div>
 
 <p>A trap video remix based around the famous 'Duane' meme</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YQiCtciE13g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="player10"></div>
 
 <p>Audio-visual collaboration with <a href="http://andrejkapor.com/“ target="_blank">Andrej Kapor</a></p>
 
 <a href="http://andrejkapor.com/“ target="_blank">Andrej Kapor</a>
 
-<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/ctngqw3cuOk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
+<div id="player11"></div>
 
 
 

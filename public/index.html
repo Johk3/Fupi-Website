@@ -6,6 +6,7 @@
 <meta charset=“utf-8” />
 <title>mickmon</title>
 <link rel="stylesheet" href="styles.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -42,6 +43,73 @@
 </header>
 
 <p class="ir-prod-musician">Irish Producer Musician</p>
+<center><img id="p_button" src="play-button.png" height="180" onclick="todo()"></center>
+<br>
+<center><img src="skip-track-back.png" height="100" id="back" onclick="previousVideo()"><img src="skip-track-forward.png" id="forward" height="100" onclick="nextVideo()"></center>
+<center><div id="player" style="visibility: hidden;"></div></center>
 
+<script type="text/javascript">
+	$(function(){
+		$('#back').slideToggle(0)
+		$('#forward').slideToggle(0)
+	})
+	var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var check = 0
+    var checkb = 1
+
+    var player;
+
+	function onYouTubePlayerAPIReady() 
+	{
+        player = new YT.Player('player', 
+        {
+          height: '390',
+          width: '640',
+          playerVars: 
+          {
+            listType:'playlist',
+            list: 'PLfYa0afsLq2MdTB4kKLbrEmEOXbUfBzxg'
+          }
+        });
+	}
+	function todo(){
+		var play_button = document.getElementById("p_button")
+		var randomnum = Math.floor(Math.random()*20)+1
+		console.log(randomnum)
+		if (check == 1){
+			play_button.src = "play-button.png"
+			$(function(){
+				$('#back').slideToggle(0)
+				$('#forward').slideToggle(0)
+			})
+			player.pauseVideo()
+			return check = 0;
+		}
+		if (checkb == 1){
+			for(var i = 0; i<randomnum; i++){
+				player.nextVideo()
+			}
+			play_button.src = "pause-button.png"
+			player.playVideo()
+			$(function(){
+				$('#back').slideToggle(0)
+				$('#forward').slideToggle(0)
+			})
+		}
+		play_button.src = "pause-button.png"
+		player.playVideo()
+		check = 1
+	}
+	function nextVideo(){
+		player.nextVideo()
+	}
+	function previousVideo(){
+		player.previousVideo()
+		
+	}
+</script>
 </body>
 </html>
