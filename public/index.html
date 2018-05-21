@@ -43,9 +43,9 @@
 </header>
 
 <p class="ir-prod-musician">Irish Producer Musician</p>
-<center><img id="p_button" src="play-button.png" height="180" onclick="todo()"></center>
+<center><img id="p_button" src="play-button.png" height="120" onclick="todo()"></center>
 <br>
-<center><img src="skip-track-back.png" height="100" id="back" onclick="previousVideo()"><img src="skip-track-forward.png" id="forward" height="100" onclick="nextVideo()"></center>
+<center><img src="skip-track-back.png" height="100" id="back" onclick="previoussVideo()"><img src="skip-track-forward.png" id="forward" height="100" onclick="nexxtVideo()"></center>
 <center><div id="player" style="visibility: hidden;"></div></center>
 
 <script type="text/javascript">
@@ -78,7 +78,6 @@
 	function todo(){
 		var play_button = document.getElementById("p_button")
 		var randomnum = Math.floor(Math.random()*20)+1
-		console.log(randomnum)
 		if (check == 1){
 			play_button.src = "play-button.png"
 			$(function(){
@@ -98,15 +97,20 @@
 				$('#back').slideToggle(0)
 				$('#forward').slideToggle(0)
 			})
+			checkb = 2
 		}
+		$(function(){
+			$('#back').show(0)
+			$('#forward').show(0)
+		})
 		play_button.src = "pause-button.png"
 		player.playVideo()
 		check = 1
 	}
-	function nextVideo(){
+	function nexxtVideo(){
 		player.nextVideo()
 	}
-	function previousVideo(){
+	function previoussVideo(){
 		player.previousVideo()
 		
 	}
