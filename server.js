@@ -34,7 +34,7 @@ app.get('/message*/', function(req, res){
 			port: 25,
 			auth: {
 				user: 'legendaryemailbot@gmail.com',
-				pass: 'J48eJVD4p0MbKiyehtrAs9vH28AK0'
+				pass: 'password123'
 			},
 			tls: {
 				rejectUnauthorized: false
